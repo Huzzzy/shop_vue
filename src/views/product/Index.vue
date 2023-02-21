@@ -229,7 +229,7 @@
                                                     <div class="products-three-single w-100  mt-30">
                                                         <div class="products-three-single-img"> <a
                                                                 href="shop-details-3.html" class="d-block"> <img
-                                                                    src="{{product.image_url}}" class="first-img" alt="" />
+                                                                    :src="product.image_url" class="first-img" alt="" />
                                                                 <img src="src/assets/images/home-three/productss2-hover-1.png"
                                                                     alt="" class="hover-img" />
                                                             </a>
@@ -381,7 +381,7 @@
                                                             <span>{{ product.category.title }}</span>
                                                             <h5><a href="shop-details-3.html"> {{ product.title }} </a>
                                                             </h5>
-                                                            <p>{{ product.price }}$</p>
+                                                            <p>${{ product.price }}</p>
                                                         </div>
                                                     </div>
                                                 </div>
