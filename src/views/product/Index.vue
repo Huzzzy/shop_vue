@@ -331,17 +331,11 @@
                                                                                 <h2> ${{product.price}} USD </h2>
                                                                                 <h6> In stuck</h6>
                                                                             </div>
-                                                                            <div class="color-varient"> <a href="#0"
-                                                                                    class="color-name pink">
-                                                                                    <span>Pink</span> </a> <a href="#0"
-                                                                                    class="color-name red">
-                                                                                    <span>Red</span> </a>
-                                                                                <a href="#0"
-                                                                                    class="color-name yellow"><span>Yellow</span>
-                                                                                </a> <a href="#0" class="color-name blue">
-                                                                                    <span>Blue</span>
-                                                                                </a> <a href="#0" class="color-name black">
-                                                                                    <span>Black</span> </a>
+                                                                            <div class="color-varient"> 
+                                                                                    <a v-for="color in product.colors" href="#0"
+                                                                                    :style="`background: #${color.title};`"   
+                                                                                    class="color-name">
+                                                                                </a> 
                                                                             </div>
                                                                             <div class="add-product">
                                                                                 <h6>Qty:</h6>
@@ -2257,6 +2251,7 @@ export default {
             this.axios.get('http://localhost:8876/api/products')
                 .then(result => {
                     this.products = result.data.data
+                    console.log(result.data.data);
                 })
                 .finally( v => {
                     $(document).trigger('change')
